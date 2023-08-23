@@ -8,10 +8,10 @@
  * Return: no return.
  */
 
-void _memcpy(void *newptr,const void* ptr, unsigned int size)
+void _memcpy(void *newptr, const void *ptr, unsigned int size)
 {
-	char* char_ptr = (char*)ptr;
-	char* char_newptr = (char*)newptr;
+	char *char_ptr = (char *)ptr;
+	char *char_newptr = (char *)newptr;
 	unsigned int i;
 
 	for (i = 0; i < size; i++)
@@ -27,9 +27,9 @@ void _memcpy(void *newptr,const void* ptr, unsigned int size)
  * if malloc fails, returns NULL.
  */
 
-void* _realloc(void* ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void* newptr;
+	void *newptr;
 
 	if (ptr == NULL)
 		return (malloc(new_size));
