@@ -107,6 +107,14 @@ int _strlen(const char *s);
 int cmp_chars(char str[], const char *delim);
 char *_strtok(char str[], const char *delim);
 int _isdigit(const char *s);
+void rev_string(char *s);
+
+/* syntax.c */
+int repeated_char(char *input, int i);
+int error_sep_op(char *input, int i, char last);
+int first_char(char *input, int *i);
+void print_syntax_error(data_shell *datash, char *input, int i, int bool);
+int check_syntax_error(data_shell *datash, char *input);
 
 /* memo.c */
 void _memcpy(void *newptr, const void *ptr, unsigned int size);
@@ -130,11 +138,26 @@ void set_env(char *name, char *value, data_shell *datash);
 int _setenv(data_shell *datash);
 int _unsetenv(data_shell *datash);
 
+/* CD.c */
+void cd_dot(data_shell *datash);
+void cd_to(data_shell *datash);
+void cd_previous(data_shell *datash);
+void cd_to_home(data_shell *datash);
+
+/* CD_Shell.c */
+int cd_shell(data_shell *datash);
+
 /* getBuiltIn */
 int (*get_builtin(char *cmd))(data_shell *datash);
 
 /* _exit.c */
 int exit_shell(data_shell *datash);
+
+
+/* auxStdLib.c */
+int get_len(int n);
+char *aux_itoa(int n);
+int _atoi(char *s);
 
 /* splitLine.c */
 char *swap_char(char *input, int bool);
@@ -142,6 +165,13 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input);
 void go_next(sep_list **list_s, line_list **list_l, data_shell *datash);
 int split_commands(data_shell *datash, char *input);
 char **split_line(char *input);
+
+/* shellLoop.c */
+char *without_comment(char *in);
+void shell_loop(data_shell *datash);
+
+/* readLine.c */
+char *read_line(int *i_eof);
 
 /* repVar.c */
 void check_env(r_var **h, char *in, data_shell *data);
@@ -159,10 +189,24 @@ int cmd_exec(data_shell *datash);
 /* getErrors.c */
 int get_error(data_shell *datash, int eval);
 
-/* auxStdLib.c */
-int get_len(int n);
-char *aux_itoa(int n);
-int _atoi(char *s);
+/* getSig.c */
+void get_sigint(int sig);
+
+/* auxHelp1.c */
+void aux_help_env(void);
+void aux_help_setenv(void);
+void aux_help_unsetenv(void);
+void aux_help_general(void);
+void aux_help_exit(void);
+
+/* auxHelp2.c */
+void aux_help(void);
+void aux_help_alias(void);
+void aux_help_cd(void);
+
+/* getHelp.c */
+int get_help(data_shell *datash);
+
 
 /* auxError1.c */
 char *strcat_cd(data_shell *, char *, char *, char *);
@@ -176,5 +220,15 @@ char *error_env(data_shell *datash);
 char *error_syntax(char **args);
 char *error_permission(char **args);
 char *error_path_126(data_shell *datash);
+
+/* auxLists1.c */
+sep_list *add_sep_node_end(sep_list **head, char sep);
+void free_sep_list(sep_list **head);
+line_list *add_line_node_end(line_list **head, char *line);
+void free_line_list(line_list **head);
+
+/* auxLists2.c */
+r_var *add_rvar_node(r_var **head, int lvar, char *var, int lval);
+void free_rvar_list(r_var **head);
 
 #endif
