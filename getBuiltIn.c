@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * getBuiltin - builtin that pais the command in the arg
+ * get_builtin - builtin that pais the command in the arg
  * @cmd: command
  * Return: function pointer of the builtin command
  */
 
-int (*getBuiltin(char *cmd))(data_shell *)
+int (*get_builtin(char *cmd))(data_shell *)
 {
 	builtin_t builtin[] = {
 		{ "env", _env },
