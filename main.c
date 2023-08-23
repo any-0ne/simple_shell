@@ -57,15 +57,9 @@ void set_data(data_shell *datash, char **av)
  * Return: 0 on success.
  */
 
-int main(int argc, char **argv)
+int main(void)
 {
 	data_shell datash;
-	(void) argc;
-	signal(SIGINT, get_sigint);
-	set_data(&datash, argv);
 	shell_loop(&datash);
-	free_data(&datash);
-	if (datash.status < 0)
-		return (255);
-	return (datash.status);
+	return (0);
 }
