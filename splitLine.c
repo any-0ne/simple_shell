@@ -185,7 +185,7 @@ char **split_line(char *input)
 	tokens = malloc(sizeof(char *) * (bsize));
 	if (tokens == NULL)
 	{
-		write(STDERR_FILENO, ": allocation error\n", 18);
+		write(2, ": allocation error\n", 18);
 		exit(EXIT_FAILURE);
 	}
 
@@ -200,7 +200,7 @@ char **split_line(char *input)
 			tokens = _reallocdp(tokens, i, sizeof(char *) * bsize);
 			if (tokens == NULL)
 			{
-				write(STDERR_FILENO, ": allocation error\n", 18);
+				write(2, ": allocation error\n", 18);
 				exit(EXIT_FAILURE);
 			}
 		}
