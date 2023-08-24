@@ -37,8 +37,8 @@ char *without_comment(char *in)
 
 /**
  * shell_loop - Loop of shell
- * @datash: data relevant (av, input, args)
- * Return: no return.
+ * @datash: data relevant
+ * Return: void.
  */
 
 void shell_loop(data_shell *datash)
@@ -49,7 +49,7 @@ void shell_loop(data_shell *datash)
 	loop = 1;
 	while (loop == 1)
 	{
-		write(STDIN_FILENO, "#cisfun$ ", 9);
+		write(STDIN_FILENO, "$ ", 2);
 		input = read_line(&i_eof);
 		if (i_eof != -1)
 		{
