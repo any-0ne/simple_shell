@@ -30,7 +30,7 @@ char *copy_info(char *name, char *value)
  * @name: name of the environment variable
  * @value: value of the environment variable
  * @datash: data structure (environ)
- * Return: no return
+ * Return: void.
  */
 
 void set_env(char *name, char *value, data_shell *datash)
@@ -58,8 +58,7 @@ void set_env(char *name, char *value, data_shell *datash)
 }
 
 /**
- * _setenv - compares env variables names
- * with the name passed.
+ * _setenv - compares env variables names with the name passed
  * @datash: data relevant (env name and env value)
  * Return: 1 on success.
  */

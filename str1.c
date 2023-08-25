@@ -4,7 +4,7 @@
  * _strcat - concatenate two strings
  * @dest: char pointer the dest of the copied str
  * @src: const char pointer the source of str
- * Return: the dest
+ * Return: the dest.
  */
 
 char *_strcat(char *dest, const char *src)
@@ -67,9 +67,9 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * _strchr - locates a character in a string,
- * @s: string.
- * @c: character.
+ * _strchr - locates a character in a string
+ * @s: string
+ * @c: character
  * Return: the pointer to the first occurrence of the character c.
  */
 
@@ -86,9 +86,9 @@ char *_strchr(char *s, char c)
 }
 
 /**
- * _strspn - gets the length of a prefix substring.
- * @s: initial segment.
- * @accept: accepted bytes.
+ * _strspn - gets the length of a prefix substring
+ * @s: initial segment
+ * @accept: accepted bytes
  * Return: the number of accepted bytes.
  */
 

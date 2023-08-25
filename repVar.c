@@ -5,7 +5,7 @@
  * @h: head of linked list
  * @in: input string
  * @data: data structure
- * Return: no return
+ * Return: void.
  */
 
 void check_env(r_var **h, char *in, data_shell *data)
@@ -47,7 +47,7 @@ void check_env(r_var **h, char *in, data_shell *data)
  * @in: input string
  * @st: last status of the Shell
  * @data: data structure
- * Return: no return
+ * Return: void.
  */
 
 int check_vars(r_var **h, char *in, char *st, data_shell *data)
