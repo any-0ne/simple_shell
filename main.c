@@ -59,10 +59,14 @@ void set_data(data_shell *datash, char **av)
 
 int main(int argc, char **argv)
 {
-	data_shell datash;
+	data_shell mysh;
 	(void)argc;
 
-	set_data(&datash, argv);
-	shell_loop(&datash);
-	return (0);
+	signal(SIGINT, get_sigint);
+	set_data(&mysh, argv);
+	shell_loop(&mysh);
+	free_data(&mysh);
+	if (mysh.status < 0)
+		return (255);
+	return (mysh.status);
 }
